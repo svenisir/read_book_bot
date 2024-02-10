@@ -9,7 +9,7 @@ def create_bookmarks_kb(*args: int) -> InlineKeyboardMarkup:
 
     kb_builder.row(*[InlineKeyboardButton(
         text=f'Страница {num}. {book[num][:100]}...',
-        callback_data=num,
+        callback_data=str(num),
     ) for num in sorted(args)], width=1)
 
     kb_builder.row(
